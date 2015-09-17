@@ -26,7 +26,6 @@ public class MySql
 
     public Connection getConnection()
     {
-
         Connection connection = null;
         Properties connProps = new Properties();
         connProps.put("user", "root");
@@ -36,9 +35,17 @@ public class MySql
         try
         {
             connection = DriverManager.getConnection(url, connProps);
-            // connection.close();
         } catch (SQLException e)
         {
+            if (connection != null)
+            {
+                try
+                {
+                    connection.close();
+                } catch (Exception ex)
+                {
+                }
+            }
             e.printStackTrace();
         }
 

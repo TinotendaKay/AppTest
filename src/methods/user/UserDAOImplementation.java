@@ -32,9 +32,12 @@ public class UserDAOImplementation implements UserDAO
     MySql mysql = new MySql(DATABASE_NAME);
 
     @Override
+    /**
+     * Inserts a user record into the database
+     */
     public User addUser(User user)
     {
-        Connection connection = mysql.getConnection();
+        
 
         long currTime = System.currentTimeMillis();
 
@@ -47,7 +50,7 @@ public class UserDAOImplementation implements UserDAO
                 + " (user_name, user_surname, created) "
                 + " values('" + user.getUserName() + "', '" + user.getSurname() + "', '" + dateTime + "')";
 
-        try (Statement statement = connection.createStatement())
+        try (Connection connection = mysql.getConnection(); Statement statement = connection.createStatement())
         {
             int put = statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             if (put > 0)
@@ -77,6 +80,9 @@ public class UserDAOImplementation implements UserDAO
     }
 
     @Override
+    /**
+     * Gets a list of users form the database and returns it
+     */
     public List<User> getAllUsers(ListRequester listRequester)
     {
         List<User> list = null;
@@ -105,7 +111,7 @@ public class UserDAOImplementation implements UserDAO
             builder.append((orderDir == 1) ? " ASC " : " DESC ");
             if (limit > 0)
             {
-                builder.append(" LIMIT " + limit);
+                builder.append(" LIMIT ").append(limit);
             }
 
         }
