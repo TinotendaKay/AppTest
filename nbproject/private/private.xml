@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/general/ListRequester.java</file>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/model/user/User.java</file>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/dao/user/UserDAO.java</file>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/table_creator/user/CreateTables.java</file>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/lib/mysql/MySql.java</file>
+            <file>file:/home/tinotenda/NetBeansProjects/AppTest/src/apptest/AppTest.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -28,18 +28,18 @@ public class CreateTables
     {
         try (Connection connection = mySql.getConnection(); Statement statement = connection.createStatement())
         {
-            String createDB = "Create database if not exists "+UserDAO.DATABASE_NAME;
-            
+            String createDB = "Create database if not exists " + UserDAO.DATABASE_NAME;
+
             statement.executeQuery(createDB);
-            
-            String createTable = "CREATE TABLE `user` (\n" +
-" `user_id` bigint(20) NOT NULL AUTO_INCREMENT,\n" +
-" `user_name` varchar(255) COLLATE latin2_hungarian_ci DEFAULT NULL,\n" +
-" `user_surname` varchar(255) COLLATE latin2_hungarian_ci DEFAULT NULL,\n" +
-" `created` timestamp NULL DEFAULT NULL,\n" +
-" PRIMARY KEY (`user_id`)\n" +
-") ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci";
-            
+
+            String createTable = "CREATE TABLE `user` (\n"
+                    + " `user_id` bigint(20) NOT NULL AUTO_INCREMENT,\n"
+                    + " `user_name` varchar(255) COLLATE latin2_hungarian_ci DEFAULT NULL,\n"
+                    + " `user_surname` varchar(255) COLLATE latin2_hungarian_ci DEFAULT NULL,\n"
+                    + " `created` timestamp NULL DEFAULT NULL,\n"
+                    + " PRIMARY KEY (`user_id`)\n"
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci";
+
         } catch (Exception e)
         {
             e.printStackTrace();

@@ -5,6 +5,7 @@
  */
 package apptest;
 
+import dao.user.UserDAO;
 import general.ListRequester;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -17,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import lib.mysql.MySql;
 import methods.user.UserDAOImplementation;
 import model.user.User;
 
@@ -37,6 +39,8 @@ public class AppTest
     {
         boolean readFromFile = false;
         boolean readFromArgs = false;
+        
+        MySql mySql = new MySql(UserDAO.DATABASE_NAME);
         
         switch (args.length)
         {

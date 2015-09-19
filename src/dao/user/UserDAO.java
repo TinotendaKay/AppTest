@@ -17,6 +17,7 @@ public interface UserDAO
 {
 
     String DATABASE_NAME = "test";
+    String TABLE_NAME = "user";
 
     User addUser(User user);
     List<User> getAllUsers(ListRequester listRequester);
